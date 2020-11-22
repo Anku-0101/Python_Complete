@@ -1,0 +1,28 @@
+'''
+@getters and @setters 
+The method name wih @property decorator is called getter method
+
+We can define a function @name.setter decorator for setter methods
+'''
+class Employee:
+    company = "Bharat Gas"
+    salary = 5600
+    salarybonus = 500
+    # totalSalary = 6100
+
+    @property
+    def totalSalary(self):
+        return self.salary + self.salarybonus
+
+    @totalSalary.setter
+    def totalSalary(self, val):
+        self.salarybonus = val - self.salary
+    
+
+    
+
+e = Employee()
+print(e.totalSalary)
+e.totalSalary = 5800
+print(e.salary)
+print(e.salarybonus)
